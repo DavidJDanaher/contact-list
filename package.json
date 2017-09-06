@@ -1,0 +1,19 @@
+{
+  "name": "angular-webpack-seed",
+  "version": "1.0.0",
+  "description": "Scaffolding for an Angular project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DavidJDanaher/angular-webpack-seed.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DavidJDanaher/angular-webpack-seed/issues"
+  },
+  "homepage": "https://github.com/DavidJDanaher/angular-webpack-seed#readme"
+}
