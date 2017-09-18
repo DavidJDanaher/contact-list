@@ -1,8 +1,15 @@
 import angular from 'angular';
 import myCtrl from './app.controller.js';
 
-const myMod = angular.module('myAppName', [])
+angular.module('myAppName', [])
     .controller('myCtrl', myCtrl);
 
+function mainView() {
+    var element = document.createElement('main');
+    element.setAttribute("ng-app", "myAppName");
+    element.innerHTML = "{{ 2 + 5 }}";
 
-console.log(myMod)
+    return element;
+}
+
+document.body.appendChild(mainView());
