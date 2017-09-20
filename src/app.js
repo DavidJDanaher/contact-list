@@ -1,13 +1,15 @@
 import angular from 'angular';
-import myCtrl from './app.controller.js';
+// import uiRouter from 'angular-ui-router';
 
-angular.module('myAppName', [])
+angular.module('myAppName', [
+    // 'uiRoutfer'
+])
     .controller('myCtrl', myCtrl);
 
 function mainView() {
     var element = document.createElement('main');
     element.setAttribute("ng-app", "myAppName");
-    element.innerHTML = "{{ 2 + 5 }}";
+    element.innerHTML = "<ng-view>Main</ng-view>";
 
     return element;
 }
