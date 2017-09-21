@@ -1,10 +1,11 @@
 export default function MyComponentController() {
     var vm = this;
 
-    vm.componentMessage = 'This comes from my component';
+    vm.message = '\"Hello from a controller!\"';
+    vm.newMessage;
     vm.updateMessage = updateMessage;
 
-    function updateMessage(value) {
-        vm.componentMessage = value;
+    function updateMessage() {
+        vm.message = vm.newMessage;
     }
 }

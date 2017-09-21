@@ -1,4 +1,3 @@
 export default function myCtrl() {
-    this.test = 'Welp';
-    console.log('myCtrl');
+    this.test = 'Hello from home controller';
 }
