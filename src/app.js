@@ -1,17 +1,18 @@
 import angular from 'angular';
-// import uiRouter from 'angular-ui-router';
+import uiRouter from '@uirouter/angularjs';
+import myCtrl from './features/home.controller.js';
 
-angular.module('myAppName', [
-    // 'uiRoutfer'
-])
+console.log(require('./features/home.html'));
+
+export default angular.module('myAppName', [uiRouter])
+    .config(confgure)
     .controller('myCtrl', myCtrl);
 
-function mainView() {
-    var element = document.createElement('main');
-    element.setAttribute("ng-app", "myAppName");
-    element.innerHTML = "<ng-view>Main</ng-view>";
-
-    return element;
+function confgure($stateProvider) {
+    $stateProvider.state('test',{
+        url: '',
+        template: require('./features/home.html'),
+        controller: myCtrl,
+        controllerAs: 'homeVm'
+    })
 }
-
-document.body.appendChild(mainView());

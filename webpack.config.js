@@ -13,10 +13,21 @@ module.exports = {
         contentBase: './dist',
         hot: true
     },
+    module: {
+        rules: [
+            {
+                test: /\.(html)$/,
+                use: {
+                    loader: 'html-loader'
+                }
+            }
+        ]
+    },
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
         new HtmlWebpackPlugin({
-            title: 'MyTempAppName'
+            title: 'MyTempAppName',
+            template: 'src/app-view.html'
         })
     ]
 }

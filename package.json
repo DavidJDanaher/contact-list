@@ -19,10 +19,11 @@
   },
   "homepage": "https://github.com/DavidJDanaher/angular-webpack-seed#readme",
   "dependencies": {
-    "angular": "^1.6.6",
-    "@uirouter/angularjs": "^1.0.3"
+    "@uirouter/angularjs": "^1.0.3",
+    "angular": "^1.6.6"
   },
   "devDependencies": {
+    "html-loader": "^0.5.1",
     "html-webpack-plugin": "^2.30.1",
     "webpack": "^3.6.0",
     "webpack-dev-server": "^2.8.2"
