@@ -1,3 +1,3 @@
-export default function myCtrl() {
+export default function MyCtrl() {
     this.test = 'Hello from home controller';
 }
