@@ -3,6 +3,7 @@ import uiRouter from '@uirouter/angularjs';
 import otherView from './features/another-view/another-view.module.js';
 import myComponent from './components/my-component/my-component.module.js';
 import myCtrl from './features/home.controller.js';
+require('./resources/styles/app.style.scss');
 
 export default angular.module('myAppName', [uiRouter, 'myComponent', 'AnotherViewModule'])
     .config(confgure)

@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
     entry: './src/app.js',
@@ -20,6 +21,13 @@ module.exports = {
                 use: {
                     loader: 'html-loader'
                 }
+            },
+            {
+                test: /\.scss$/,
+                use: ExtractTextPlugin.extract({
+                    fallback: 'style-loader',
+                    use: ['css-loader?sourceMap', 'sass-loader?sourceMap']
+                })
             }
         ]
     },
@@ -28,6 +36,7 @@ module.exports = {
         new HtmlWebpackPlugin({
             title: 'MyTempAppName',
             template: 'src/app-view.html'
-        })
+        }),
+        new ExtractTextPlugin('style.css')
     ]
 }
