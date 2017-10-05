@@ -1,2 +1,18 @@
-<div class="home-wrapper">This is my home vm: {{ homeVm.test }}</div>
-<my-component-directive></my-component-directive>
+<div class="home-wrapper uk-padding">
+    <div class="uk-section-primary uk-padding">
+        <div class="uk-container">
+            <h2>This is my home vm: {{ homeVm.test }}</h2>
+        </div>
+    </div>
+    <hr>
+    <div class="uk-section-default uk-padding">
+        <div class="uk-container">
+            <h2>Another container</h2>
+
+            <div class="uk-card uk-card-small uk-card-secondary uk-card-body uk-width-1-2 component-card">
+                <h4 class="uk-card-title">This is my directive panel</h4>
+                <my-component-directive></my-component-directive>
+            </div>
+        </div>
+    </div>
+</div>
