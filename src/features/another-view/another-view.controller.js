@@ -1,3 +1,3 @@
 export default function AnotherViewCtrl() {
-    this.message = 'A seperate view controller';
+    this.message = '\"I\'m a controller from a different view!\"'
 }
