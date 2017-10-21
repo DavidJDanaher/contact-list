@@ -1,7 +1,7 @@
 {
-  "name": "angular-webpack-seed",
+  "name": "contact-list",
   "version": "1.0.0",
-  "description": "Scaffolding for an Angular project",
+  "description": "AngularJS project to display a contact list from JSON data",
   "main": "app.js",
   "scripts": {
     "build": "webpack",
@@ -10,14 +10,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/DavidJDanaher/angular-webpack-seed.git"
+    "url": "git+https://github.com/DavidJDanaher/contact-list.git"
   },
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/DavidJDanaher/angular-webpack-seed/issues"
-  },
-  "homepage": "https://github.com/DavidJDanaher/angular-webpack-seed#readme",
+  "homepage": "https://github.com/DavidJDanaher/contact-list#readme",
   "dependencies": {
     "@uirouter/angularjs": "^1.0.3",
     "angular": "^1.6.6",

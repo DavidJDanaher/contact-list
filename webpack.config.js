@@ -34,7 +34,7 @@ module.exports = {
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
         new HtmlWebpackPlugin({
-            title: 'MyTempAppName',
+            title: 'Contact List',
             template: 'src/app-view.html'
         }),
         new ExtractTextPlugin('style.css')
