@@ -29,15 +29,17 @@ export default function contactService($http, $q) {
     function getContactDetails(id) {
         var deferred = $q.defer();
         var contact;
+        console.log('called');
 
-            getContacts()
-                .then(function(res) {
-                    contact = res.filter(function(contact) {
-                        return contact.id === id;
-                    }).pop();
+        getContacts()
+            .then(function(res) {
+                contact = res.filter(function(contact) {
+                    return contact.id === id;
+                }).pop();
 
-                    deferred.resolve(contact);
-                });
+                deferred.resolve(contact);
+            });
+            console.log(deferred.promise);
 
         return deferred.promise;
     }

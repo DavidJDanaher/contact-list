@@ -1,8 +1,8 @@
-export default function DetailViewCtrl(contact) {
+export default function DetailViewCtrl(details) {
     var vm = this;
 
     this.message = '\"I\'m a controller from a different view!\"';
-    vm.contact = contact;
+    vm.contact = details;
 
     vm.toggleFavorite = toggleFavorite;
 

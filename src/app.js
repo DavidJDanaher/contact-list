@@ -7,7 +7,6 @@ import contactService from './services/contact.service.js';
 import detailView from './features/detail-view/detail-view.module.js';
 import contactDetails from './components/contact-details/contact-details.module.js';
 import contactListElement from './components/contact-list-element/contact-list-element.module.js';
-
 import ContactListCtrl from './features/contacts.controller.js';
 
 require('./resources/styles/app.style.scss');
@@ -23,16 +22,18 @@ export default angular.module('ContactList', [
     .service('contactService', contactService);
 
 function confgure($stateProvider) {
-    $stateProvider.state('Home', {
-        url: '/home',
+    $stateProvider.state({
+        name: 'contacts',
+        url: '/',
         template: require('./features/contacts-list-view.html'),
         controller: 'ContactListCtrl',
         controllerAs: 'listVm'
-    }).state('contact', {
+    }).state({
+        name: 'details',
         url: '/details/{id}',
         template: require('./features/detail-view/detail-view.html'),
         resolve: {
-            contact: function (contactService, $transition$) {
+            details: function (contactService, $transition$) {
                 return contactService.getContactDetails($transition$.params().id);
             }
         },

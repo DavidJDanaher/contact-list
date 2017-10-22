@@ -3,7 +3,7 @@
         <h2>Contacts</h2>
         <h4>Favorite Contacts</h4>
         <div ng-repeat="contact in listVm.contacts">
-            <a ui-sref="contact({ id: contact.id })">
+            <a ui-sref="details({ id: contact.id })">
                 <contact-list-element
                     ng-if="contact.isFavorite"
                     name="{{ contact.name }}"
@@ -13,10 +13,10 @@
                 ></contact-list-element>
             </a>
         </div>
-        
+
         <h4>Other Contacts</h4>
         <div ng-repeat="contact in listVm.contacts">
-            <a ui-sref="contact({ id: contact.id })">
+            <a ui-sref="details({ id: contact.id })">
                 <contact-list-element
                     ng-if="!contact.isFavorite"
                     name="{{ contact.name }}"
