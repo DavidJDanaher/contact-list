@@ -1,0 +1,38 @@
+<div class="uk-grid">
+    <div class="uk-width uk-margin">
+        <img src="{{ detailVm.contact.largeImageURL }}"/>
+        <a ng-click="detailVm.toggleFavorite()">
+            <span ng-if="detailVm.contact.isFavorite" alt="Click to unfavorite">
+                <!-- <img src="../../resources/images/star-icon/Favorite — True.png"/> -->
+            </span>
+            <span ng-if="!detailVm.contact.isFavorite">Favorite</span>
+        </a>
+
+        <a ui-sref="Home">Contacts</a>
+        <h4>{{ detailVm.contact.name }}</h4>
+        <span>{{ detailVm.contact.companyName }}</span>
+        <hr>
+    </div>
+    <div class="uk-width" ng-repeat="(key, value) in detailVm.contact.phone">
+        Phone:
+        <span>{{ value }}</span>  <span>{{ key }}</span>
+        <hr>
+    </div>
+    <div class="uk-width">
+        Address:
+        <div>
+            <p>{{ detailVm.contact.address.street }}</p>
+            <p>{{ detailVm.contact.address.city }}, {{ detailVm.contact.address.state }}
+                {{ detailVm.contact.address.zipCode }}, {{ detailVm.contact.address.country }}
+            </p>
+        </div>
+        <hr>
+    </div>
+    <div class="uk-width">
+        Birthdate: {{ detailVm.contact.birthdate }}
+        <hr>
+    </div>
+    <div class="uk-width">
+        Email: {{ detailVm.contact.emailAddress }}
+    </div>
+</div>

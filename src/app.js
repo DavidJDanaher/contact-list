@@ -3,18 +3,19 @@ import uiRouter from '@uirouter/angularjs';
 import uiKit from 'uikit';
 import kitIcons from 'uikit/dist/js/uikit-icons';
 
-import otherView from './features/detail-view/detail-view.module.js';
+import contactService from './services/contact.service.js';
+import detailView from './features/detail-view/detail-view.module.js';
 import contactDetails from './components/contact-details/contact-details.module.js';
 import contactListElement from './components/contact-list-element/contact-list-element.module.js';
-import contactService from './services/contact.service.js';
+
 import ContactListCtrl from './features/contacts.controller.js';
 
 require('./resources/styles/app.style.scss');
 uiKit.use(kitIcons);
 
-export default angular.module('myAppName', [
+export default angular.module('ContactList', [
     uiRouter,
-    'AnotherViewModule',
+    'detailViewModule',
     'contactDetails',
     'contactListElement'])
     .config(confgure)
@@ -23,14 +24,19 @@ export default angular.module('myAppName', [
 
 function confgure($stateProvider) {
     $stateProvider.state('Home', {
-        url: '',
+        url: '/home',
         template: require('./features/contacts-list-view.html'),
         controller: 'ContactListCtrl',
         controllerAs: 'listVm'
-    }).state('Feature', {
-        url: '/otherFeature',
+    }).state('contact', {
+        url: '/details/{id}',
         template: require('./features/detail-view/detail-view.html'),
-        controller: 'AnotherViewCtrl',
-        controllerAs: 'anotherVm'
+        resolve: {
+            contact: function (contactService, $transition$) {
+                return contactService.getContactDetails($transition$.params().id);
+            }
+        },
+        controller: 'DetailViewCtrl',
+        controllerAs: 'detailVm'
     });
 }
