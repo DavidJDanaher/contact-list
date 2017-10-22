@@ -5,7 +5,6 @@ import kitIcons from 'uikit/dist/js/uikit-icons';
 
 import contactService from './services/contact.service.js';
 import detailView from './features/detail-view/detail-view.module.js';
-import contactDetails from './components/contact-details/contact-details.module.js';
 import contactListElement from './components/contact-list-element/contact-list-element.module.js';
 import ContactListCtrl from './features/contacts.controller.js';
 
@@ -15,7 +14,6 @@ uiKit.use(kitIcons);
 export default angular.module('ContactList', [
     uiRouter,
     'detailViewModule',
-    'contactDetails',
     'contactListElement'])
     .config(confgure)
     .controller('ContactListCtrl', ContactListCtrl)

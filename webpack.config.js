@@ -28,7 +28,16 @@ module.exports = {
                     fallback: 'style-loader',
                     use: ['css-loader?sourceMap', 'sass-loader?sourceMap']
                 })
-            }
+            },
+            {
+                test: /\.(png|jpg|gif)$/,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {}
+                    }
+                ]
+             }
         ]
     },
     plugins: [
