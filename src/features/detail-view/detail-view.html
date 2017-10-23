@@ -1,5 +1,5 @@
 <div class="contact-details">
-    <div class="uk-grid uk-padding-small uk-margin-top uk-margin-remove-left uk-text-center list-header">
+    <div class="uk-grid uk-padding-small uk-padding-top uk-margin-remove-left uk-text-center list-header">
         <div class="uk-width-1-2 uk-padding-remove-left uk-text-left">
             <a ui-sref="contacts">
                 <span uk-icon="icon: chevron-left"></span>Contacts
@@ -16,8 +16,8 @@
         <span class="image-wrapper">
             <img src="{{ detailVm.contact.largeImageURL }}"/>
         </span>
-        <h1>{{ detailVm.contact.name }}</h1>
-        <h3 class="label">{{ detailVm.contact.companyName }}</h3>
+        <h1 class="contact-name">{{ detailVm.contact.name }}</h1>
+        <h3 class="label contact-company">{{ detailVm.contact.companyName }}</h3>
     </div>
     <hr>
     <div ng-repeat="(key, value) in detailVm.contact.phone">

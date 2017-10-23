@@ -16,12 +16,13 @@ $base-font-size-large: 15px;
 
     .contact-list {
         .list-element {
-            .text-info {
-                // font-size: 12px;
-                padding-left: 5px;
+            height: 100px;
 
+            .text-info {
+                padding-left: 5px;
+                font-size: $base-font-size-small;
+                
                 h4 {
-                    // font-size: 18px;
                     margin: 0;
                 }
             }
@@ -37,6 +38,7 @@ $base-font-size-large: 15px;
             .favorite-icon {
                 width: 20px;
                 height: 20px;
+                margin: 30px auto 10px auto;
 
                 .icon {
                     width: 100%;
@@ -75,16 +77,12 @@ $base-font-size-large: 15px;
         }
 
         .label {
-            // font-size: 0.8em;
+            font-size: 1.2 * $base-font-size-small;
         }
 
         .value {
-            // font-size: 1em;
+            font-size: 1.5 * $base-font-size-small;
             font-weight: bold;
-        }
-
-        .field {
-            // font-size: 0.8em;
         }
     }
 }
@@ -94,11 +92,13 @@ $base-font-size-large: 15px;
 
     .contact-list {
         .list-element {
+            height: 160px;
             .text-info {
-                // font-size: 16px;
+                font-size: 16px;
                 padding-left: 10px;
+
                 h4 {
-                    // font-size: 24px;
+                    font-size: 24px;
                     margin: 0;
                 }
             }
@@ -114,6 +114,7 @@ $base-font-size-large: 15px;
             .favorite-icon {
                 width: 40px;
                 height: 40px;
+                margin: 30px auto 10px auto;
 
                 .icon {
                     width: 100%;
@@ -145,16 +146,12 @@ $base-font-size-large: 15px;
         }
 
         .label {
-            // font-size: 1.2em;
+            font-size: 1.5 * $base-font-size-med;
         }
 
         .value {
-            // font-size: 1.5em;
+            font-size: 2 * $base-font-size-med;
             font-weight: bold;
-        }
-
-        .field {
-            // font-size: 1.2em;
         }
 
         .image-wrapper {
@@ -172,12 +169,12 @@ $base-font-size-large: 15px;
 
     .contact-list {
         .list-element {
-
             .text-info {
-                // font-size: 20px;
-                padding-left: 15px;
+                font-size: 20px;
+                padding-left: 10px;
+
                 h4 {
-                    // font-size: 36px;
+                    font-size: 36px;
                     margin: 0;
                 }
             }
@@ -193,6 +190,7 @@ $base-font-size-large: 15px;
             .favorite-icon {
                 width: 40px;
                 height: 40px;
+                margin: 40px auto 10px auto;
 
                 .icon {
                     width: 100%;
@@ -231,24 +229,19 @@ $base-font-size-large: 15px;
         }
 
         .label {
-            // font-size: 1.5em;
+            font-size: 1.5 * $base-font-size-large;
         }
 
         .value {
-            // font-size: 2em;
+            font-size: 2 * $base-font-size-large;
             font-weight: bold;
         }
-
-        .field {
-            // font-size: 1.5em;
-        }
-
     }
 }
 
 .contact-list-wrapper {
     hr {
-        margin: 0 30px;
+        margin: 0 40px;
     }
 
     h2 {
@@ -278,7 +271,7 @@ $base-font-size-large: 15px;
         .list-header {
             text-align: center;
             background-color: $backgroung-light-gray;;
-            // padding: 10px;
+            padding: 40px 0 10px 0;
         }
 
         .list-subheader {
@@ -308,6 +301,17 @@ $base-font-size-large: 15px;
         .list-header {
             background-color: $backgroung-light-gray;
             border-bottom: 2px solid $border-gray;
+            padding-top: 30px;
+            font-size: 20px;
         }
+
+        .contact-company {
+            margin-top: 0;
+        }
+
+        .contact-name {
+            margin-bottom: 0;
+        }
+
     }
 }

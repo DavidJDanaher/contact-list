@@ -22,7 +22,7 @@ export default angular.module('ContactList', [
 function confgure($stateProvider) {
     $stateProvider.state({
         name: 'contacts',
-        url: '/',
+        url: '',
         template: require('./features/contacts-list-view.html'),
         controller: 'ContactListCtrl',
         controllerAs: 'listVm'
