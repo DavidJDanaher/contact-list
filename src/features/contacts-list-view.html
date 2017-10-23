@@ -1,0 +1,28 @@
+<div class="contact-list">
+    <h2 class="list-header">Contacts</h2>
+    <h5 class="uk-text-uppercase list-subheader uk-padding">Favorite Contacts</h5>
+    <div ng-repeat="contact in listVm.contacts | orderBy: 'name'" class="list-element-wrapper">
+        <a ui-sref="details({ id: contact.id })">
+            <contact-list-element
+                ng-if="contact.isFavorite"
+                name="{{ contact.name }}"
+                company="{{ contact.companyName }}"
+                image="{{ contact.smallImageURL }}"
+                favorite="true"
+            ></contact-list-element>
+        </a>
+    </div>
+
+    <h5 class="uk-text-uppercase list-subheader">Other Contacts</h5>
+    <div ng-repeat="contact in listVm.contacts | orderBy: 'name'" class="list-element-wrapper">
+        <a ui-sref="details({ id: contact.id })">
+            <contact-list-element
+                ng-if="!contact.isFavorite"
+                name="{{ contact.name }}"
+                company="{{ contact.companyName }}"
+                image="{{ contact.smallImageURL }}"
+                favorite="false"
+            ></contact-list-element>
+        </a>
+    </div>
+</div>

@@ -1,0 +1,15 @@
+<div class="uk-grid  list-element">
+    <div class="uk-width-auto uk-margin-left uk-margin-top uk-margin-bottom">
+        <span class="image-wrapper">
+            <img src="{{ elementVm.image }}"/>
+        </span>
+    </div>
+    <div class="uk-align-middle favorite-icon">
+        <span ng-show="elementVm.favorite" class="icon"></span>
+    </div>
+    <div class="uk-width-expand uk-align-middle text-info">
+        <h4>{{ elementVm.name }}</h4>
+        <span>{{ elementVm.company }}</span>
+    </div>
+</div>
+<hr>

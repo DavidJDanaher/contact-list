@@ -1,0 +1,53 @@
+<div class="contact-details">
+    <div class="uk-grid uk-padding-small uk-padding-top uk-margin-remove-left uk-text-center list-header">
+        <div class="uk-width-1-2 uk-padding-remove-left uk-text-left">
+            <a ui-sref="contacts">
+                <span uk-icon="icon: chevron-left"></span>Contacts
+            </a>
+        </div>
+        <div class="uk-width-1-2 uk-text-right">
+            <a ng-click="detailVm.toggleFavorite()">
+                <span ng-show="detailVm.contact.isFavorite" class="favorite icon"></span>
+                <span ng-hide="detailVm.contact.isFavorite" class="not-favorite icon"></span>
+            </a>
+        </div>
+    </div>
+    <div class="uk-padding uk-padding-remove-bottom uk-text-center">
+        <span class="image-wrapper">
+            <img src="{{ detailVm.contact.largeImageURL }}"/>
+        </span>
+        <h1 class="contact-name">{{ detailVm.contact.name }}</h1>
+        <h3 class="label contact-company">{{ detailVm.contact.companyName }}</h3>
+    </div>
+    <hr>
+    <div ng-repeat="(key, value) in detailVm.contact.phone">
+        <div class="uk-grid uk-padding" >
+            <div class="uk-width-1-1 uk-text-uppercase label">Phone:</div>
+            <div class="uk-width-1-2 uk-text-left uk-margin-small-top ">
+                <span class="value">({{ value.substring(0,3)}}) {{ value.substring(4) }}</span>
+            </div>
+            <div class="uk-width-1-2 uk-text-right uk-margin-small-top">
+                <span class="uk-text-capitalize label phone">{{ key }}</span>
+            </div>
+        </div>
+        <hr>
+    </div>
+    <div class="uk-padding">
+        <div class="uk-text-uppercase label">Address:</div>
+        <div class="value uk-margin-small-top">{{ detailVm.contact.address.street }}</div>
+        <div class="value">
+            {{ detailVm.contact.address.city }}, {{ detailVm.contact.address.state }}
+            {{ detailVm.contact.address.zipCode }}, {{ detailVm.contact.address.country }}
+        </div>
+    </div>
+    <hr>
+    <div class="uk-padding">
+         <div class="uk-text-uppercase label">Birthdate:</div>
+         <div class="uk-margin-small-top value">{{ detailVm.contact.birthdate }}</div>
+    </div>
+    <hr>
+    <div class="uk-padding">
+        <div class="uk-text-uppercase label">Email:</div>
+        <div class="uk-margin-small-top value">{{ detailVm.contact.emailAddress }}</div>
+    </div>
+</div>

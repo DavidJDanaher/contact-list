@@ -3,27 +3,39 @@ import uiRouter from '@uirouter/angularjs';
 import uiKit from 'uikit';
 import kitIcons from 'uikit/dist/js/uikit-icons';
 
-import otherView from './features/another-view/another-view.module.js';
-import myComponent from './components/my-component/my-component.module.js';
-import HomeCtrl from './features/home.controller.js';
+import contactService from './services/contact.service.js';
+import detailView from './features/detail-view/detail-view.module.js';
+import contactListElement from './components/contact-list-element/contact-list-element.module.js';
+import ContactListCtrl from './features/contacts.controller.js';
 
 require('./resources/styles/app.style.scss');
 uiKit.use(kitIcons);
 
-export default angular.module('myAppName', [uiRouter, 'myComponent', 'AnotherViewModule'])
+export default angular.module('ContactList', [
+    uiRouter,
+    'detailViewModule',
+    'contactListElement'])
     .config(confgure)
-    .controller('HomeCtrl', HomeCtrl);
+    .controller('ContactListCtrl', ContactListCtrl)
+    .service('contactService', contactService);
 
 function confgure($stateProvider) {
-    $stateProvider.state('Home', {
+    $stateProvider.state({
+        name: 'contacts',
         url: '',
-        template: require('./features/home.html'),
-        controller: 'HomeCtrl',
-        controllerAs: 'homeVm'
-    }).state('Feature', {
-        url: '/otherFeature',
-        template: require('./features/another-view/another-view.html'),
-        controller: 'AnotherViewCtrl',
-        controllerAs: 'anotherVm'
+        template: require('./features/contacts-list-view.html'),
+        controller: 'ContactListCtrl',
+        controllerAs: 'listVm'
+    }).state({
+        name: 'details',
+        url: '/details/{id}',
+        template: require('./features/detail-view/detail-view.html'),
+        resolve: {
+            details: function (contactService, $transition$) {
+                return contactService.getContactDetails($transition$.params().id);
+            }
+        },
+        controller: 'DetailViewCtrl',
+        controllerAs: 'detailVm'
     });
 }
