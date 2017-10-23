@@ -1,16 +1,20 @@
-import ctrl from './home.controller.js';
+import ctrl from './contacts.controller.js';
 import { expect } from 'chai';
+import  sinon from 'sinon';
 
-
-describe('First test', function() {
+describe('Contact List Controller', function() {
     var myCtrl;
+    var contactServiceMock;
 
     beforeEach(function() {
-        myCtrl = new ctrl();
+        contactServiceMock = {
+            getContacts: sinon.spy()
+        }
+
+        myCtrl = new ctrl(contactServiceMock);
     });
 
-
-    it('should do something', function() {
-        expect(myCtrl.test).to.equal('Hello from home controller');
+    it('should call the contact service for the list', function() {
+        expect(contactServiceMock).to.have.been.called;
     })
 });

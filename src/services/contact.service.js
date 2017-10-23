@@ -1,5 +1,6 @@
 export default function contactService($http, $q) {
     var service = this;
+    // This is to avoid CORS problems running locally
     var proxyUrl = 'https://cors-anywhere.herokuapp.com/';
     var contactsUrl = 'https://s3.amazonaws.com/technical-challenge/v3/contacts.json';
     var contacts = [];
@@ -29,7 +30,6 @@ export default function contactService($http, $q) {
     function getContactDetails(id) {
         var deferred = $q.defer();
         var contact;
-        console.log('called');
 
         getContacts()
             .then(function(res) {
@@ -39,7 +39,6 @@ export default function contactService($http, $q) {
 
                 deferred.resolve(contact);
             });
-            console.log(deferred.promise);
 
         return deferred.promise;
     }
