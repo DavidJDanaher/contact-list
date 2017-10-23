@@ -1,7 +1,7 @@
 <div class="contact-list">
     <h2 class="list-header">Contacts</h2>
     <h4 class="uk-text-uppercase list-subheader">Favorite Contacts</h4>
-    <div ng-repeat="contact in listVm.contacts">
+    <div ng-repeat="contact in listVm.contacts" class="list-element-wrapper">
         <a ui-sref="details({ id: contact.id })">
             <contact-list-element
                 ng-if="contact.isFavorite"

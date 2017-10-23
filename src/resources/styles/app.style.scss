@@ -161,11 +161,18 @@
         margin: 0;
     }
 
+    .list-element-wrapper {
+        &:hover {
+            background-color: #F1F1F1;
+        }
+    }
     .list-element {
         .text-info {
             span {
                 color: #BBBBBB;
             }
         }
+
+
     }
 }
